@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PagoASAP — Investor One-Pager</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f6fa;
+      color: #1a1d2e;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.12);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #3730a3 0%, #4f46e5 50%, #6366f1 100%);
+      padding: 36px 48px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: 120px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .logo-text {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .logo-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .badge-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge.green {
+      background: rgba(52,211,153,0.2);
+      border-color: rgba(52,211,153,0.4);
+      color: #6ee7b7;
+    }
+
+    .header-tagline {
+      color: #fff;
+    }
+    .header-tagline h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .header-tagline h1 span {
+      color: #a5b4fc;
+    }
+    .header-tagline p {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 400;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* ── KPI STRIP ── */
+    .kpi-strip {
+      background: #1e1b4b;
+      padding: 0 48px;
+      display: flex;
+      gap: 0;
+    }
+    .kpi {
+      flex: 1;
+      padding: 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .kpi:last-child { border-right: none; }
+    .kpi-value {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .kpi-value span { color: #a5b4fc; }
+    .kpi-label {
+      color: rgba(255,255,255,0.5);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+    .kpi-delta {
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    /* ── BODY GRID ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+    .col-left {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+    }
+    .col-right {
+      border-left: 1px solid #eef0f6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 28px 32px;
+      border-bottom: 1px solid #eef0f6;
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #4f46e5;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1d2e;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    .section p {
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    /* PROBLEM / SOLUTION */
+    .problem-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .ps-card {
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .ps-card.solution {
+      background: linear-gradient(135deg, #eef2ff, #ede9fe);
+    }
+    .ps-card-icon {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .ps-card h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1d2e;
+      margin-bottom: 5px;
+    }
+    .ps-card p {
+      font-size: 11.5px;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    /* TRACTION */
+    .traction-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .tract-card {
+      flex: 1;
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 12px 14px;
+      border-top: 3px solid #4f46e5;
+    }
+    .tract-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #4f46e5;
+      letter-spacing: -0.5px;
+    }
+    .tract-lbl {
+      font-size: 10px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-top: 3px;
+    }
+    .tract-note {
+      font-size: 10.5px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* TEAM */
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .team-member {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4f46e5, #818cf8);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .member-info h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1d2e;
+      margin-bottom: 2px;
+    }
+    .member-info p {
+      font-size: 11.5px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .member-tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #4f46e5;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 3px;
+    }
+
+    /* MARKET */
+    .market-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .market-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .market-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4f46e5;
+      flex-shrink: 0;
+    }
+    .market-item p {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .market-item strong {
+      color: #1a1d2e;
+    }
+
+    /* ROADMAP */
+    .roadmap-list {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .road-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .road-quarter {
+      background: #4f46e5;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .road-item p {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    /* THE ASK */
+    .ask-box {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 6px;
+      color: #fff;
+    }
+    .ask-amount {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+    .ask-label {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.75;
+      margin-top: 2px;
+      margin-bottom: 12px;
+    }
+    .ask-uses {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ask-use-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ask-use-label {
+      font-size: 11px;
+      opacity: 0.85;
+    }
+    .ask-use-bar-wrap {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 3px;
+      margin: 0 10px;
+    }
+    .ask-use-bar {
+      height: 100%;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.75);
+    }
+    .ask-use-pct {
+      font-size: 11px;
+      font-weight: 700;
+      opacity: 0.9;
+      min-width: 30px;
+      text-align: right;
+    }
+
+    /* MOAT */
+    .moat-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .moat-tag {
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+      color: #4338ca;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+
+    /* CLIENTS */
+    .backer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .backer-chip {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #1e293b;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .backer-chip .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4f46e5;
+    }
+    .backer-chip .chip-sub {
+      font-size: 10px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #1e1b4b;
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left {
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+    }
+    .footer-left strong {
+      color: #fff;
+      font-weight: 700;
+    }
+    .footer-right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .footer-contact {
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .footer-confidential {
+      color: rgba(255,255,255,0.35);
+      font-size: 10px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-icon">⚡</div>
+        <div>
+          <div class="logo-text">Pago ASAP</div>
+          <div class="logo-sub">API-First Financial Infrastructure · Venezuela → LATAM</div>
+        </div>
+      </div>
+      <div class="badge-area">
+        <div class="badge">Seed Round · March 2026</div>
+        <div class="badge green">● Backed by Bitso</div>
+        <div class="badge green">● Profitable & Growing</div>
+      </div>
+    </div>
+    <div class="header-tagline">
+      <h1>The <span>Payment Rails</span> Powering<br/>Venezuela's Fintech Gold Rush</h1>
+      <p>We're building the Stripe of Venezuela — programmable payment infrastructure connecting banks, fintechs, and corporates through one API. FX liquidity and settlement are built-in capabilities, so clients move money reliably without managing a dozen fragmented providers.</p>
+    </div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-value">$300<span>M+</span></div>
+      <div class="kpi-label">Processed in 2025</div>
+      <div class="kpi-delta">↑ 145% YoY</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">$100<span>K</span></div>
+      <div class="kpi-label">MRR (Feb 2026)</div>
+      <div class="kpi-delta">→ $1.2M ARR on track</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">60<span>%</span></div>
+      <div class="kpi-label">Gross Margin</div>
+      <div class="kpi-delta">Near-zero fintech churn</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">~60<span>%</span></div>
+      <div class="kpi-label">Net Profit Margin</div>
+      <div class="kpi-delta">$1M rev · $600K profit · bootstrapped</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">$10<span>B+</span></div>
+      <div class="kpi-label">TAM (Annual Volume)</div>
+      <div class="kpi-delta">Remittances + B2B flows</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-grid">
+
+    <!-- LEFT + CENTER COLUMNS -->
+    <div class="col-left">
+
+      <!-- PROBLEM / SOLUTION -->
+      <div class="section">
+        <div class="section-label">The Opportunity</div>
+        <h2>Venezuela's Payment Infrastructure is a Decade Behind — We're the Fix</h2>
+        <div class="problem-solution">
+          <div class="ps-card">
+            <div class="ps-card-icon">⚠️</div>
+            <h3>The Problem</h3>
+            <p>Venezuela's payment rails are fragmented, banks lack modern APIs, and cross-border settlement is slow and unreliable. Fintechs and corporates must manage 5+ disconnected providers just to move money — and still face high failure rates.</p>
+          </div>
+          <div class="ps-card solution">
+            <div class="ps-card-icon">⚡</div>
+            <h3>Our Solution</h3>
+            <p>One API giving fintechs and corporates direct access to Venezuela's payment rails and bank connectivity. FX liquidity and settlement are built-in — not the product. Clients go live in &lt;2 weeks; building this independently takes months.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRACTION -->
+      <div class="section">
+        <div class="section-label">Traction</div>
+        <h2>Profitable at 60% Net Margin — Built Bootstrapped</h2>
+        <div class="traction-row">
+          <div class="tract-card">
+            <div class="tract-val">$300M+</div>
+            <div class="tract-lbl">Total Processed</div>
+            <div class="tract-note">145% YoY growth in 2025</div>
+          </div>
+          <div class="tract-card">
+            <div class="tract-val">$100K</div>
+            <div class="tract-lbl">Monthly Revenue</div>
+            <div class="tract-note">Reported February 2026</div>
+          </div>
+          <div class="tract-card">
+            <div class="tract-val">60%</div>
+            <div class="tract-lbl">Gross Margin</div>
+            <div class="tract-note">On processed flows</div>
+          </div>
+          <div class="tract-card">
+            <div class="tract-val">≈0%</div>
+            <div class="tract-lbl">Fintech Churn</div>
+            <div class="tract-note">Rail stickiness — not FX</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPETITIVE MOAT -->
+      <div class="section">
+        <div class="section-label">Why We Win</div>
+        <h2>Rails-First Moat in a Hard Market</h2>
+        <p style="margin-bottom:4px;">Getting direct connectivity to Venezuelan banks, local payment rails, and compliance infrastructure takes months of relationship-building we've already done. Clients that run payments on our rails don't leave — not because of FX rates, but because we're embedded in their operations. Volume flywheel and switching costs compound over time.</p>
+        <div class="moat-tags">
+          <span class="moat-tag">🏦 Direct Bank Connectivity</span>
+          <span class="moat-tag">🛤️ Local Payment Rails</span>
+          <span class="moat-tag">⚖️ Compliance Stack</span>
+          <span class="moat-tag">🔁 Volume Flywheel</span>
+          <span class="moat-tag">🛡️ Rail-Agnostic Architecture</span>
+          <span class="moat-tag">⏱️ &lt;2 Week API Onboarding</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- TEAM -->
+      <div class="section">
+        <div class="section-label">Founding Team</div>
+        <h2>Operators Who've Lived This Problem</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="avatar">FG</div>
+            <div class="member-info">
+              <h3>Freddy Genatios · CEO</h3>
+              <p>10+ yrs building payment products and financial infrastructure across LatAm.</p>
+              <span class="member-tag">Ex-Bitso BizPM</span>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="avatar">MW</div>
+            <div class="member-info">
+              <h3>Mayer Waich · COO</h3>
+              <p>Payments operations veteran with institutional finance and compliance background.</p>
+              <span class="member-tag">Ex-Santander</span>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="avatar">JA</div>
+            <div class="member-info">
+              <h3>Jeremi Alcalá · CTO</h3>
+              <p>20 yrs engineering leadership in payments infrastructure & secure systems.</p>
+              <span class="member-tag">Ex-NovoPayments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARKET -->
+      <div class="section">
+        <div class="section-label">Market Opportunity</div>
+        <h2>A $10B+ Market with No Dominant Player</h2>
+        <div class="market-row">
+          <div class="market-item">
+            <div class="market-dot"></div>
+            <p><strong>$4–6B/yr</strong> in remittances flowing into Venezuela annually</p>
+          </div>
+          <div class="market-item">
+            <div class="market-dot"></div>
+            <p><strong>30M+ consumers</strong> shifting to digital payments in a dollarizing economy</p>
+          </div>
+          <div class="market-item">
+            <div class="market-dot"></div>
+            <p><strong>1M+ merchants</strong> needing unified rails and cross-border settlement</p>
+          </div>
+          <div class="market-item">
+            <div class="market-dot"></div>
+            <p><strong>GDP growing</strong> — financial infrastructure demand expanding proportionally</p>
+          </div>
+          <div class="market-item">
+            <div class="market-dot"></div>
+            <p><strong>Early-curve market</strong> — fragmented competition, no dominant fintech infra yet</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROADMAP -->
+      <div class="section">
+        <div class="section-label">2026 Roadmap</div>
+        <h2>Clear Path to Regional Scale</h2>
+        <div class="roadmap-list">
+          <div class="road-item">
+            <span class="road-quarter">Q1 '26</span>
+            <p>3 new bank integrations · Developer Portal v2 · Core infra 10x capacity</p>
+          </div>
+          <div class="road-item">
+            <span class="road-quarter">Q2 '26</span>
+            <p>Enter Colombia/Panama · Cross-border B2B pilot · MTL license secured</p>
+          </div>
+          <div class="road-item">
+            <span class="road-quarter">Q3 '26</span>
+            <p>Virtual card issuance · Fraud AI module · 3 global remittance networks</p>
+          </div>
+          <div class="road-item">
+            <span class="road-quarter">Q4 '26</span>
+            <p>$100M/mo processing run-rate · Enterprise treasury suite · 50+ team</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE ASK -->
+      <div class="section">
+        <div class="section-label">The Ask</div>
+        <h2>Seed Round</h2>
+        <div class="ask-box">
+          <div class="ask-amount">$1,000,000</div>
+          <div class="ask-label">Seed · 24-month runway to $500K MRR</div>
+          <div class="ask-uses">
+            <div class="ask-use-row">
+              <span class="ask-use-label">Product & Eng.</span>
+              <div class="ask-use-bar-wrap"><div class="ask-use-bar" style="width:40%"></div></div>
+              <span class="ask-use-pct">40%</span>
+            </div>
+            <div class="ask-use-row">
+              <span class="ask-use-label">Compliance</span>
+              <div class="ask-use-bar-wrap"><div class="ask-use-bar" style="width:30%"></div></div>
+              <span class="ask-use-pct">30%</span>
+            </div>
+            <div class="ask-use-row">
+              <span class="ask-use-label">Commercial</span>
+              <div class="ask-use-bar-wrap"><div class="ask-use-bar" style="width:20%"></div></div>
+              <span class="ask-use-pct">20%</span>
+            </div>
+            <div class="ask-use-row">
+              <span class="ask-use-label">Operations</span>
+              <div class="ask-use-bar-wrap"><div class="ask-use-bar" style="width:10%"></div></div>
+              <span class="ask-use-pct">10%</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:2px;">Notable Clients</p>
+          <div class="backer-row">
+            <div class="backer-chip"><span class="dot"></span> Majority <span class="chip-sub">Neobank</span></div>
+            <div class="backer-chip"><span class="dot"></span> Cashea</div>
+            <div class="backer-chip"><span class="dot"></span> Krece</div>
+            <div class="backer-chip"><span class="dot"></span> Meru</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Pago ASAP</strong> · Connecting LATAM to the Global Economy · March 2026
+    </div>
+    <div class="footer-right">
+      <a class="footer-contact" href="mailto:founders@pagoasap.com">founders@pagoasap.com</a>
+      <span class="footer-confidential">Confidential — Do Not Distribute</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
