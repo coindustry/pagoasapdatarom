@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PagoASAP — Legal Structure & Compliance</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f5f6fa; color: #1a1d2e; }
+
+    .page {
+      width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.12);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 55%, #2563eb 100%);
+      padding: 30px 48px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 260px; height: 260px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .header::after {
+      content: ''; position: absolute; bottom: -70px; right: 130px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .logo-area { display: flex; align-items: center; gap: 14px; }
+    .logo-icon { width: 44px; height: 44px; background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .logo-text { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+    .logo-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin-top: 2px; }
+    .badge-area { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; }
+    .badge {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+      color: #fff; font-size: 10.5px; font-weight: 600; padding: 4px 12px;
+      border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .badge.green { background: rgba(52,211,153,0.18); border-color: rgba(52,211,153,0.38); color: #6ee7b7; }
+    .header-tagline h1 { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .header-tagline h1 span { color: #93c5fd; }
+    .header-tagline p { color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.6; max-width: 620px; }
+
+    /* ── COMPLIANCE STRIP ── */
+    .compliance-strip {
+      background: #0f172a;
+      padding: 0 48px;
+      display: flex;
+    }
+    .comp-item {
+      flex: 1;
+      padding: 16px 0;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .comp-item:last-child { border-right: none; }
+    .comp-flag { font-size: 22px; flex-shrink: 0; }
+    .comp-text-main { color: #fff; font-size: 12.5px; font-weight: 700; }
+    .comp-text-sub { color: rgba(255,255,255,0.45); font-size: 10px; font-weight: 500; margin-top: 2px; }
+    .comp-badge {
+      display: inline-block; background: rgba(52,211,153,0.15);
+      border: 1px solid rgba(52,211,153,0.3); color: #6ee7b7;
+      font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+      letter-spacing: 0.5px; text-transform: uppercase; margin-top: 3px;
+    }
+
+    /* ── BODY ── */
+    .body-wrap { padding: 32px 48px 28px; }
+
+    /* ── FLOW DIAGRAM ── */
+    .flow-section { margin-bottom: 28px; }
+    .section-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #2563eb; margin-bottom: 8px;
+    }
+    .section-title { font-size: 17px; font-weight: 700; color: #1a1d2e; margin-bottom: 16px; letter-spacing: -0.3px; }
+
+    /* ── FLOW DIAGRAM ── */
+    .flow-diagram {
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 24px 16px;
+      position: relative;
+    }
+
+    /* Row layout */
+    .flow-row { display: flex; align-items: center; }
+    .flow-row-top { margin-bottom: 0; }
+
+    /* Nodes */
+    .flow-node {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 13px;
+      flex-shrink: 0;
+      width: 168px;
+    }
+    .flow-node.primary   { border-color: #2563eb; background: #eff6ff; }
+    .flow-node.secondary { border-color: #7c3aed; background: #f5f3ff; }
+    .flow-node.venezuela { border-color: #059669; background: #ecfdf5; }
+    .flow-node.client    { border-color: #d97706; background: #fffbeb; }
+    .flow-node.beneficiary { border-color: #64748b; background: #f8fafc; }
+    .flow-node.tools     { border-color: #0891b2; background: #ecfeff; width: auto; flex: 1; }
+
+    .node-flag { font-size: 15px; margin-bottom: 2px; }
+    .node-name { font-size: 11px; font-weight: 800; color: #1a1d2e; line-height: 1.3; }
+    .node-entity { font-size: 9.5px; color: #64748b; margin-top: 1px; }
+    .node-license {
+      display: inline-block; margin-top: 4px;
+      font-size: 9px; font-weight: 700; padding: 2px 6px;
+      border-radius: 6px; text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .lic-blue   { background: #dbeafe; color: #1d4ed8; }
+    .lic-purple { background: #ede9fe; color: #6d28d9; }
+    .lic-green  { background: #d1fae5; color: #065f46; }
+    .lic-orange { background: #fef3c7; color: #92400e; }
+    .lic-cyan   { background: #cffafe; color: #0e7490; }
+
+    /* Connectors */
+    .flow-conn {
+      display: flex; flex-direction: column;
+      align-items: center; padding: 0 5px; gap: 3px; min-width: 52px;
+    }
+    .arr-solid {
+      display: flex; align-items: center; width: 100%;
+    }
+    .arr-line { height: 2px; flex: 1; background: linear-gradient(to right, #2563eb, #60a5fa); border-radius: 1px; }
+    .arr-line-green { height: 2px; flex: 1; background: linear-gradient(to right, #059669, #34d399); border-radius: 1px; }
+    .arr-dashed { border-top: 2px dashed #9ca3af; flex: 1; }
+    .arr-head { font-size: 13px; margin-left: -2px; }
+    .arr-blue  { color: #2563eb; }
+    .arr-gray  { color: #9ca3af; }
+    .arr-green { color: #059669; }
+
+    .conn-lbl {
+      font-size: 9px; font-weight: 600; white-space: nowrap;
+      padding: 1px 6px; border-radius: 5px;
+    }
+    .lbl-funds  { background: #dbeafe; color: #1d4ed8; }
+    .lbl-data   { background: #f1f5f9; color: #475569; }
+    .lbl-payout { background: #d1fae5; color: #065f46; }
+    .lbl-sub    { background: #ede9fe; color: #6d28d9; }
+
+    .contract-pill {
+      background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 6px; padding: 3px 7px;
+      font-size: 9px; font-weight: 600; color: #475569;
+      white-space: nowrap; margin-top: 2px;
+    }
+
+    /* Vertical drop connector between row1 and row2 */
+    .flow-drop-wrap {
+      display: flex;
+      align-items: flex-start;
+      margin: 0 0 0 0;
+    }
+    .flow-drop-spacer { width: 168px; flex-shrink: 0; } /* matches client node width */
+    .flow-drop-line-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 168px; /* aligns under Monetary node */
+      flex-shrink: 0;
+    }
+    .drop-vert {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(to bottom, #2563eb, #7c3aed);
+      border-radius: 1px;
+      margin: 0 auto;
+    }
+    .drop-label {
+      font-size: 9px; font-weight: 600; color: #6d28d9;
+      background: #ede9fe; padding: 2px 7px; border-radius: 5px;
+      white-space: nowrap; margin: 2px auto;
+    }
+    .drop-vert-2 {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(to bottom, #7c3aed, #7c3aed);
+      border-radius: 1px;
+      margin: 0 auto;
+    }
+    .drop-arrow { color: #7c3aed; font-size: 13px; margin-top: -2px; }
+
+    /* Compliance tech badges */
+    .tech-bar {
+      display: flex;
+      gap: 6px;
+      margin: 8px 0 4px;
+      padding: 8px 12px;
+      background: #0f172a;
+      border-radius: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tech-bar-label { color: rgba(255,255,255,0.5); font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin-right: 4px; }
+    .tech-chip {
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px; padding: 3px 10px;
+      color: #fff; font-size: 10px; font-weight: 600;
+    }
+    .tech-chip .tcdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .tc-orange { background: #f97316; }
+    .tc-blue   { background: #3b82f6; }
+    .tc-green  { background: #22c55e; }
+
+    /* Flow legend */
+    .flow-legend {
+      display: flex; gap: 18px; margin-top: 12px; justify-content: center; flex-wrap: wrap;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #64748b; }
+    .legend-line   { width: 24px; height: 2px; background: #2563eb; border-radius: 1px; }
+    .legend-dashed { width: 24px; border-top: 2px dashed #9ca3af; }
+    .legend-green  { width: 24px; height: 2px; background: #059669; border-radius: 1px; }
+    .legend-purple { width: 24px; height: 2px; background: #7c3aed; border-radius: 1px; }
+
+    /* ── TWO COLUMN SECTION ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .col-card {
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .col-card-title { font-size: 13px; font-weight: 700; color: #1a1d2e; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .col-card-title .icon { font-size: 16px; }
+
+    .entity-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .entity-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .entity-item .eflag { font-size: 18px; flex-shrink: 0; }
+    .entity-item .ename { font-size: 12px; font-weight: 700; color: #1a1d2e; }
+    .entity-item .erole { font-size: 10.5px; color: #64748b; margin-top: 1px; line-height: 1.4; }
+    .entity-item .etag {
+      display: inline-block; margin-top: 4px;
+      font-size: 9.5px; font-weight: 600; padding: 2px 8px;
+      border-radius: 8px;
+    }
+
+    .contract-row { display: flex; flex-direction: column; gap: 8px; }
+    .contract-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .contract-parties { font-size: 11.5px; font-weight: 700; color: #1a1d2e; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .c-arrow { color: #2563eb; }
+    .contract-detail { font-size: 10.5px; color: #64748b; line-height: 1.5; }
+    .contract-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .ctag {
+      font-size: 9.5px; font-weight: 600; padding: 2px 8px;
+      border-radius: 8px; background: #f1f5f9; color: #475569;
+    }
+    .ctag.blue { background: #dbeafe; color: #1d4ed8; }
+    .ctag.green { background: #d1fae5; color: #065f46; }
+    .ctag.purple { background: #ede9fe; color: #6d28d9; }
+
+    /* ── INVESTOR NARRATIVE ── */
+    .narrative-box {
+      background: linear-gradient(135deg, #1e3a5f, #1e40af);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .narrative-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+    .narrative-points { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .narrative-point { display: flex; gap: 8px; align-items: flex-start; }
+    .narrative-point .tick { color: #6ee7b7; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .narrative-point p { font-size: 11.5px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+    .narrative-point p strong { color: #fff; }
+
+    /* ── RISK MITIGATION ── */
+    .risk-row { display: flex; gap: 10px; margin-bottom: 20px; }
+    .risk-card {
+      flex: 1;
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      border-top: 3px solid #2563eb;
+    }
+    .risk-card h4 { font-size: 11.5px; font-weight: 700; color: #1a1d2e; margin-bottom: 4px; }
+    .risk-card p { font-size: 10.5px; color: #64748b; line-height: 1.5; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0f172a;
+      padding: 14px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left { color: rgba(255,255,255,0.55); font-size: 11px; }
+    .footer-left strong { color: #fff; }
+    .footer-right { display: flex; gap: 20px; align-items: center; }
+    .footer-contact { color: #93c5fd; font-size: 12px; font-weight: 500; text-decoration: none; }
+    .footer-conf { color: rgba(255,255,255,0.3); font-size: 10px; }
+
+    @media print { body { background: #fff; } .page { box-shadow: none; width: 100%; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-icon">⚡</div>
+        <div>
+          <div class="logo-text">Pago ASAP</div>
+          <div class="logo-sub">Legal Structure & Regulatory Compliance</div>
+        </div>
+      </div>
+      <div class="badge-area">
+        <div class="badge">Confidential · March 2026</div>
+        <div class="badge green">● 3-Jurisdiction Coverage</div>
+        <div class="badge green">● Fully Licensed Operations</div>
+      </div>
+    </div>
+    <div class="header-tagline">
+      <h1>Built on <span>Compliant, Multi-Jurisdictional</span> Rails</h1>
+      <p>PagoASAP operates through a purpose-built legal stack: a FINTRAC-registered MSB in Canada handles international client relationships, a Colombian subsidiary manages intermediary flows, and a SUNACRIP-licensed exchange in Venezuela executes local settlement — giving clients a single API backed by three layers of regulatory coverage.</p>
+    </div>
+  </div>
+
+  <!-- COMPLIANCE STRIP -->
+  <div class="compliance-strip">
+    <div class="comp-item" style="padding-left:0">
+      <div class="comp-flag">🇨🇦</div>
+      <div>
+        <div class="comp-text-main">Monetary Central Holdings Ltd</div>
+        <div class="comp-text-sub">Victoria, Canada · BC1444580</div>
+        <div class="comp-badge">FINTRAC MSB Registered</div>
+      </div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-flag">🇨🇴</div>
+      <div>
+        <div class="comp-text-main">MKT 18 SAS</div>
+        <div class="comp-text-sub">Bogotá, Colombia · NIT 901.037.995-1</div>
+        <div class="comp-badge">Subsidiary · Pass-Through</div>
+      </div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-flag">🇻🇪</div>
+      <div>
+        <div class="comp-text-main">Crixto Venezuela C.A</div>
+        <div class="comp-text-sub">RIF J-500253931 · Renewed Jan 2025</div>
+        <div class="comp-badge">SUNACRIP Licensed Exchange</div>
+      </div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-flag">⚖️</div>
+      <div>
+        <div class="comp-text-main">Dispute Resolution</div>
+        <div class="comp-text-sub">CAM Santiago · Arbitration Clause</div>
+        <div class="comp-badge">Binding International Arbitration</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-wrap">
+
+    <!-- FLOW DIAGRAM -->
+    <div class="flow-section">
+      <div class="section-label">Funds, Data & Contract Flow</div>
+      <div class="section-title">How Money & Instructions Move Through the Stack</div>
+
+      <div class="flow-diagram">
+
+        <!-- ── ROW 1: Client → Monetary Central Holdings ── -->
+        <div class="flow-row flow-row-top">
+
+          <!-- CLIENT -->
+          <div class="flow-node client">
+            <div class="node-flag">🏢</div>
+            <div class="node-name">Client</div>
+            <div class="node-entity">Fintech / Corporate / Bank</div>
+            <div class="node-license lic-orange">API Integrator</div>
+          </div>
+
+          <!-- Connector: Client → Monetary -->
+          <div class="flow-conn">
+            <div class="arr-solid">
+              <div class="arr-line"></div>
+              <div class="arr-head arr-blue">▶</div>
+            </div>
+            <div class="conn-lbl lbl-funds">Crypto (USDT)</div>
+            <div class="arr-solid" style="margin-top:3px">
+              <div class="arr-dashed"></div>
+              <div class="arr-head arr-gray">▶</div>
+            </div>
+            <div class="conn-lbl lbl-data">API Instructions</div>
+            <div class="contract-pill">Contract A</div>
+          </div>
+
+          <!-- MONETARY -->
+          <div class="flow-node primary">
+            <div class="node-flag">🇨🇦</div>
+            <div class="node-name">Monetary Central Holdings</div>
+            <div class="node-entity">Victoria, Canada</div>
+            <div class="node-license lic-blue">FINTRAC MSB</div>
+          </div>
+
+          <!-- Spacer to fill remaining row width -->
+          <div style="flex:1; display:flex; align-items:center; padding-left:16px;">
+            <div style="border:1px dashed #cbd5e1; border-radius:10px; padding:10px 14px; background:#fff; width:100%;">
+              <div style="font-size:10px;font-weight:700;color:#0e7490;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.6px;">🔒 Compliance Technology — Receipt Layer</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:6px 10px;">
+                  <div style="font-size:10.5px;font-weight:700;color:#c2410c;">🔥 Fireblocks</div>
+                  <div style="font-size:9.5px;color:#78350f;margin-top:1px;">Institutional crypto custody<br/>& fund receipt infrastructure</div>
+                </div>
+                <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:6px 10px;">
+                  <div style="font-size:10.5px;font-weight:700;color:#1d4ed8;">🔗 Chainalysis</div>
+                  <div style="font-size:9.5px;color:#1e40af;margin-top:1px;">Blockchain analytics &amp;<br/>transaction risk scoring<br/><span style="font-style:italic;opacity:0.8;">Embedded in Fireblocks</span></div>
+                </div>
+                <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:6px 10px;">
+                  <div style="font-size:10.5px;font-weight:700;color:#15803d;">🛡️ AML Watcher</div>
+                  <div style="font-size:9.5px;color:#166534;margin-top:1px;">Real-time AML screening<br/>&amp; global sanctions lists</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── VERTICAL DROP: Monetary → MKT ── -->
+        <div class="flow-drop-wrap">
+          <div class="flow-drop-spacer"></div>
+          <!-- aligns connector under Monetary node (client node width + connector width + half of monetary) -->
+          <div style="width:52px;flex-shrink:0;"></div><!-- matches conn width -->
+          <div class="flow-drop-line-col">
+            <div class="drop-vert"></div>
+            <div class="drop-label">Subsidiary Routing · USDT</div>
+            <div class="drop-vert-2"></div>
+            <div class="drop-arrow">▼</div>
+          </div>
+        </div>
+
+        <!-- ── ROW 2: MKT → Crixto → Beneficiary ── -->
+        <div class="flow-row" style="justify-content:flex-end;">
+
+          <!-- Right-align row 2 under Monetary by using a spacer -->
+          <div style="flex:1;max-width:220px;"></div>
+
+          <!-- MKT -->
+          <div class="flow-node secondary">
+            <div class="node-flag">🇨🇴</div>
+            <div class="node-name">MKT 18 SAS</div>
+            <div class="node-entity">Bogotá, Colombia</div>
+            <div class="node-license lic-purple">Subsidiary</div>
+          </div>
+
+          <!-- Connector: MKT → Crixto -->
+          <div class="flow-conn">
+            <div class="arr-solid">
+              <div class="arr-line"></div>
+              <div class="arr-head arr-blue">▶</div>
+            </div>
+            <div class="conn-lbl lbl-funds">USDT</div>
+            <div class="arr-solid" style="margin-top:3px">
+              <div class="arr-dashed"></div>
+              <div class="arr-head arr-gray">▶</div>
+            </div>
+            <div class="conn-lbl lbl-data">KYC + Orders</div>
+            <div class="contract-pill">Contract B</div>
+          </div>
+
+          <!-- CRIXTO -->
+          <div class="flow-node venezuela">
+            <div class="node-flag">🇻🇪</div>
+            <div class="node-name">Crixto Venezuela</div>
+            <div class="node-entity">Casa de Intercambio · SUNACRIP</div>
+            <div class="node-license lic-green">CI-SUNA-2025-02</div>
+          </div>
+
+          <!-- Connector: Crixto → Beneficiary -->
+          <div class="flow-conn">
+            <div class="arr-solid">
+              <div class="arr-line-green"></div>
+              <div class="arr-head arr-green">▶</div>
+            </div>
+            <div class="conn-lbl lbl-payout">VES Payout</div>
+            <div class="arr-solid" style="margin-top:3px">
+              <div class="arr-dashed"></div>
+              <div class="arr-head arr-gray">▶</div>
+            </div>
+            <div class="conn-lbl lbl-data">Confirmation</div>
+            <div class="contract-pill">≤10 min SLA</div>
+          </div>
+
+          <!-- BENEFICIARY -->
+          <div class="flow-node beneficiary">
+            <div class="node-flag">👤</div>
+            <div class="node-name">Beneficiary</div>
+            <div class="node-entity">Venezuela · Pago Móvil / Bank</div>
+            <div class="node-license" style="background:#f1f5f9;color:#475569;">Local Rails</div>
+          </div>
+
+        </div>
+
+        <!-- LEGEND -->
+        <div class="flow-legend">
+          <div class="legend-item"><div class="legend-line"></div> Crypto Funds (USDT)</div>
+          <div class="legend-item"><div class="legend-dashed"></div> Data / API Instructions</div>
+          <div class="legend-item"><div class="legend-green"></div> Local VES Disbursement</div>
+          <div class="legend-item"><div class="legend-purple"></div> Subsidiary Internal Routing</div>
+          <div class="legend-item" style="background:#f1f5f9;padding:3px 10px;border-radius:8px;">
+            <span style="font-weight:700;color:#1d4ed8">A</span>&nbsp;= Client ↔ Monetary &nbsp;·&nbsp;
+            <span style="font-weight:700;color:#6d28d9">B</span>&nbsp;= MKT ↔ Crixto
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTITIES + CONTRACTS -->
+    <div class="two-col">
+
+      <!-- ENTITY STRUCTURE -->
+      <div class="col-card">
+        <div class="col-card-title"><span class="icon">🏛️</span> Corporate Entity Structure</div>
+        <div class="entity-row">
+          <div class="entity-item">
+            <div class="eflag">🇨🇦</div>
+            <div>
+              <div class="ename">Monetary Central Holdings Ltd</div>
+              <div class="erole">Parent company. Signs all client-facing contracts. Holds FINTRAC MSB registration — enabling compliant USD/USDT receipt and FX services in Canada. International regulatory anchor.</div>
+              <div class="etag lic-blue">MSB · FINTRAC · BC1444580</div>
+            </div>
+          </div>
+          <div class="entity-item">
+            <div class="eflag">🇨🇴</div>
+            <div>
+              <div class="ename">MKT 18 SAS</div>
+              <div class="erole">Wholly-owned subsidiary registered in Colombia. Acts as the commercial intermediary between Monetary and Crixto — managing USDT routing and revenue splits with the Venezuelan operator.</div>
+              <div class="etag lic-purple">Subsidiary · NIT 901.037.995-1</div>
+            </div>
+          </div>
+          <div class="entity-item">
+            <div class="eflag">🇻🇪</div>
+            <div>
+              <div class="ename">Crixto Venezuela C.A</div>
+              <div class="erole">Licensed crypto exchange and payment operator in Venezuela. Holds official SUNACRIP Casa de Intercambio license, renewed January 2025. Executes all local VES conversion and payout disbursement.</div>
+              <div class="etag lic-green">SUNACRIP · CI-SUNA-2025-02 · RISEC 76265-3931-4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTRACTS -->
+      <div class="col-card">
+        <div class="col-card-title"><span class="icon">📄</span> Contract Agreements</div>
+        <div class="contract-row">
+          <div class="contract-item">
+            <div class="contract-parties">
+              <span style="color:#92400e;font-weight:700">Client</span>
+              <span class="c-arrow">→</span>
+              <span style="color:#1d4ed8">Monetary Central Holdings</span>
+            </div>
+            <div class="contract-detail">Commercial Alliance Agreement. Monetary provides USDT→VES exchange and VES payment dispersal via API. Client sends USD/USDT funds and payment instructions. Settlement SLA of ≤10 minutes. 4-year initial term with automatic annual renewal.</div>
+            <div class="contract-tags">
+              <span class="ctag blue">4-Year Term</span>
+              <span class="ctag blue">Auto-Renew</span>
+              <span class="ctag">AML / KYC Obligations</span>
+              <span class="ctag">CAM Santiago Arbitration</span>
+              <span class="ctag">5yr Confidentiality</span>
+            </div>
+          </div>
+          <div class="contract-item">
+            <div class="contract-parties">
+              <span style="color:#6d28d9;font-weight:700">MKT 18 SAS</span>
+              <span class="c-arrow">→</span>
+              <span style="color:#065f46">Crixto Venezuela</span>
+            </div>
+            <div class="contract-detail">Commercial Alliance Framework. MKT refers client volume to Crixto for local execution. Crixto processes crypto-financial services (USDT→VES, OTC, custody, payment gateway) and pays MKT a revenue share (MKT: 0.20% / Crixto: 0.40% + IVA per transaction). Monthly settlement reports.</div>
+            <div class="contract-tags">
+              <span class="ctag purple">1-Year Renewable</span>
+              <span class="ctag green">SUNACRIP Compliant</span>
+              <span class="ctag">LOCDOFT AML</span>
+              <span class="ctag">Revenue Share</span>
+              <span class="ctag">Caracas Arbitration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INVESTOR NARRATIVE -->
+    <div class="narrative-box">
+      <h3>🔒 Why This Structure Protects Investors & Clients</h3>
+      <div class="narrative-points">
+        <div class="narrative-point">
+          <span class="tick">✓</span>
+          <p><strong>Canadian MSB anchors the structure.</strong> FINTRAC registration means Monetary Central Holdings operates under one of the world's most respected AML/CFT frameworks — giving international clients and investors a trusted counterparty.</p>
+        </div>
+        <div class="narrative-point">
+          <span class="tick">✓</span>
+          <p><strong>Venezuela risk is operationally isolated.</strong> Local execution sits entirely within Crixto — a separately licensed Venezuelan entity. Monetary's Canadian registration remains clean regardless of local regulatory changes.</p>
+        </div>
+        <div class="narrative-point">
+          <span class="tick">✓</span>
+          <p><strong>Licensed at every layer of the stack.</strong> No gray areas — Crixto holds an active, renewed SUNACRIP Casa de Intercambio license (CI-SUNA-2025-02), the official Venezuelan authorization for crypto FX and payment disbursement.</p>
+        </div>
+        <div class="narrative-point">
+          <span class="tick">✓</span>
+          <p><strong>Institutional-grade compliance tech at every entry point.</strong> Fireblocks handles custody and crypto receipt. Chainalysis (embedded in Fireblocks) scores every transaction for risk. AML Watcher screens against global sanctions lists in real time — before funds move.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISK MITIGATION -->
+    <div class="risk-row">
+      <div class="risk-card">
+        <h4>⚖️ Regulatory Risk</h4>
+        <p>Operations structured so international entity (Canada) never directly touches Venezuelan local rails. SUNACRIP compliance managed by Crixto as licensed operator — shielding Monetary from local regulatory exposure.</p>
+      </div>
+      <div class="risk-card">
+        <h4>🛡️ AML / KYC Coverage</h4>
+        <p>Fireblocks for custody, Chainalysis for on-chain risk scoring, and AML Watcher for real-time sanctions screening — layered on top of FINTRAC (Canada) and SUNACRIP/LOCDOFT (Venezuela) regulatory obligations. All funds arrive in crypto and are screened before any disbursement.</p>
+      </div>
+      <div class="risk-card">
+        <h4>🔄 Operator Continuity</h4>
+        <p>Client contracts are with Monetary Central Holdings, not Venezuelan operators. If local conditions require a change in execution partner, clients are unaffected — service continuity is guaranteed at the contract level.</p>
+      </div>
+      <div class="risk-card">
+        <h4>📋 Dispute Resolution</h4>
+        <p>Client contracts governed by international arbitration (CAM Santiago). MKT-Crixto disputes resolved via Caracas Chamber of Commerce arbitration. Both frameworks are binding and enforceable.</p>
+      </div>
+    </div>
+
+  </div><!-- /body-wrap -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Pago ASAP</strong> · Legal Structure Overview · March 2026
+    </div>
+    <div class="footer-right">
+      <a class="footer-contact" href="mailto:founders@pagoasap.com">founders@pagoasap.com</a>
+      <span class="footer-conf">Confidential — Do Not Distribute</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
